@@ -89,7 +89,6 @@ $ajaxUtils.sendGetRequest(
 // *** finish **
 
 
-
 // Builds HTML for the home page based on categories array
 // returned from the server.
 function buildAndShowHomeHTML (categories) {
@@ -98,15 +97,10 @@ function buildAndShowHomeHTML (categories) {
   $ajaxUtils.sendGetRequest(
     homeHtmlUrl,
     function (homeHtmlUrl) {
-      console.log(categories);
       var chosenCategoryShortName = chooseRandomCategory(categories);
-      console.log(chosenCategoryShortName);
-      //var name = chosenCategoryShortName.name;
       var short_name= chosenCategoryShortName.short_name;
-      console.log("chosenCategoryShortName=" + short_name);
 
       finalHtml = homeHtmlUrl;
-
       finalHtml =
         insertProperty(homeHtmlUrl, "randomCategoryShortName", "'" + short_name + "'");
       console.log(finalHtml);
